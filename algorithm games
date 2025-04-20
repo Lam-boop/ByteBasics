@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Algorithmic Structures</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #F2DDFA;
+      margin: 0;
+      padding: 0;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #CDE6FF;
+      color: #2e3a59;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #2e3a59;
+    }
+
+    .framed {
+      background-color: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .game-placeholder {
+      background-color: #dbeafe;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: bold;
+      color: #1e40af;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      background-color: #3b82f6;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #2563eb;
+    }
+    
+    .game-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff7ed;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .sortable-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .sortable-item {
+      background: #ffe0b3;
+      padding: 15px 25px;
+      margin: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: grab;
+    }
+
+    .sortable-item:active {
+      cursor: grabbing;
+    } 
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Algorithmic Structures</h1>
+  </header>
+
+  <div class="container">
+    <h2>🧠 What Are Algorithmic Structures?</h2>
+    <p class="framed">
+      Algorithmic structures help us organize steps and decisions in solving problems. They are the foundation of programming and logical thinking.
+    </p>
+
+    <h2>🔁 Types of Structures</h2>
+    <ul>
+      <li><strong>Sequence:</strong> Steps happen one after another in order.</li>
+      <li><strong>Selection:</strong> Decisions (like "if this, then that").</li>
+      <li><strong>Iteration:</strong> Repeating actions (loops like <code>for</code> or <code>while</code>).</li>
+    </ul>
+
+    <h2>📊 Example</h2>
+    <p class="framed">Here’s a flowchart that demonstrates the concept of selection and iteration in an algorithm:</p>
+    <img src="https://www.edrawsoft.com/flowchart/images/algorithm-flowchart-example4.png" alt="Flowchart Example" />
+
+    <h2>🎮 Try a Mini-Game</h2>
+    <div class="game-container">
+      <h2>🧠 Algorithm Sort Game</h2>
+      <p class="framed">Drag and drop the numbers to sort them in ascending order!</p>
+      <ul id="sortable" class="sortable-list">
+        <li class="sortable-item">5</li>
+        <li class="sortable-item">2</li>
+        <li class="sortable-item">8</li>
+        <li class="sortable-item">1</li>
+        <li class="sortable-item">4</li>
+      </ul>
+      <button onclick="checkOrder()">Check Order</button>
+      <p id="result" class="framed"></p>
+    </div>
+
+    <h2>🧩 Challenge</h2>
+    <p class="framed">
+      Think of a simple everyday task (like making tea or brushing your teeth) and try writing down the algorithm in steps. Can you identify where sequence, selection, or iteration happens?
+    </p>
+
+    <a href="index.html" class="back-button">← Back to Homepage</a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    // Make the list sortable
+    $(function () {
+      $("#sortable").sortable();
+      $("#sortable").disableSelection();
+    });
+
+    function checkOrder() {
+      const items = document.querySelectorAll('.sortable-item');
+      const values = Array.from(items).map(item => parseInt(item.textContent));
+      const sorted = [...values].sort((a, b) => a - b);
+      const result = document.getElementById("result");
+
+      if (JSON.stringify(values) === JSON.stringify(sorted)) {
+        result.textContent = "✅ Correct! The numbers are sorted.";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Not quite. Try again!";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
