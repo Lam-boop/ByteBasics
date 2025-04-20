@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math & CS Learning Platform</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #F2DDFA;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #CDE6FF;
+      color: #2e3a59;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #7CAAD8;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 8px #C17CD8;;
+      padding: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #F9C1C2;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ByteBasics</h1>
+    <p>Mathematical Foundations of Computer Science & IT</p>
+  </header>
+  <nav>
+    <a href="number-systems.html">Number Systems</a>
+    <a href="logic-algebra.html">Logic Algebra</a>
+    <a href="logic-circuits.html">Logic Circuits</a>
+    <a href="algorithm-games.html">Algorithm Games</a>
+    <a href="network-setup.html">Network Setups</a>
+    <a href="graphical-programming.html">Graphical Programming</a>
+  </nav>
+
+  <section class="container">
+    <div class="card">
+      <h3>Number Systems</h3>
+      <p>Learn binary, decimal, hexadecimal systems interactively.</p>
+      <a href="number-systems.html">Start Learning</a>
+    </div>
+    <div class="card">
+      <h3>Logic Algebra</h3>
+      <p>Explore truth tables, Boolean expressions, and simplification rules.</p>
+      <a href="logic-algebra.html">Start Learning</a>
+    </div>
+    <div class="card">
+      <h3>Logic Circuits</h3>
+      <p>Watch tutorials explaining logic gates and digital circuits.</p>
+      <a href="logic-circuits.html">Watch Videos</a>
+    </div>
+    <div class="card">
+      <h3>Algorithm Games</h3>
+      <p>Play interactive games to understand sorting, loops, and conditionals.</p>
+      <a href="algorithm-games.html">Play Now</a>
+    </div>
+    <div class="card">
+      <h3>Network Setups</h3>
+      <p>Visualize how LAN, WAN, and protocols work with diagrams and popups.</p>
+      <a href="network-setup.html">Explore Networks</a>
+    </div>
+    <div class="card">
+      <h3>Graphical Programming</h3>
+      <p>Learn Scratch or Blockly basics through visual tools or tutorials.</p>
+      <a href="graphical-programming.html">Start Programming</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Interactive CS Learning | Built with ❤️ using HTML & CSS</p>
+  </footer>
+</body>
+</html>
