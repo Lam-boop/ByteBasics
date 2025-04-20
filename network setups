@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Network Setups</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #F2DDFA;
+      margin: 0;
+      padding: 0;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #CDE6FF;
+      color: #2e3a59;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #2e3a59;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      background-color: #10b981;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #059669;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Network Setups</h1>
+  </header>
+
+  <div class="container">
+    <h2>🌐 What Are Network Setups?</h2>
+    <p>
+      Network setups refer to how computers and other devices are connected and communicate with each other. These setups are essential for sharing data, accessing the internet, and working together in offices or schools.
+    </p>
+
+    <h2>🖧 Common Types of Network Topologies</h2>
+    <ul>
+      <li><strong>Star Topology:</strong> All devices are connected to a central hub.</li>
+      <li><strong>Bus Topology:</strong> All devices share a single communication line.</li>
+      <li><strong>Ring Topology:</strong> Devices are connected in a circular pattern.</li>
+      <li><strong>Mesh Topology:</strong> Every device connects to every other device.</li>
+    </ul>
+
+    <img src="https://www.swissns.ch/site/wp-content/uploads/2017/06/network-topologies.png" alt="Types of Network Topologies" />
+
+    <h2>🧪 Try This Visualization</h2>
+    <p>
+      Imagine you're setting up a network for a school. Try drawing different topologies (star, ring, mesh) and think about which is most efficient and reliable. How would failures affect each setup?
+    </p>
+
+    <h2>📺 Bonus Video</h2>
+    <iframe 
+  src="https://www.youtube.com/embed/zbqrNg4C98U?start=1"
+  title="Network setups explained"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+    </iframe>
+
+    <a href="index.html" class="back-button">← Back to Homepage</a>
+  </div>
+</body>
+</html>
