@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Systems</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #F2DDFA;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    main {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .content-section {
+      background-color: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      color: #2e3a59;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      margin-bottom: 30px;
+    }
+    .section {
+      background: #CDE6FF;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    .quiz ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .quiz li {
+      padding: 10px 0;
+    }
+    .back-btn {
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background-color: #3498db;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    .back-btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Understanding Number Systems</h1>
+
+    <div class="section">
+      <h2>What are Number Systems?</h2>
+      <p>
+        In computer science, number systems are essential for data representation and processing.
+        Unlike humans who commonly use the decimal (base-10) system, computers operate using binary (base-2).
+        Understanding how to convert between number systems is a fundamental skill in computer science.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Types of Number Systems</h2>
+      <ul>
+        <li><strong>Binary (Base-2)</strong> – Uses only 0 and 1. It's the language of computers.</li>
+        <li><strong>Decimal (Base-10)</strong> – Our everyday number system. Digits from 0 to 9.</li>
+        <li><strong>Octal (Base-8)</strong> – Uses digits from 0 to 7. Useful in older computing systems.</li>
+        <li><strong>Hexadecimal (Base-16)</strong> – Uses digits 0-9 and letters A-F. Common in programming and memory addressing.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Video Tutorial</h2>
+      <iframe 
+        src="https://www.youtube.com/embed/qB-pm7HEVDg"
+        title="Number Systems Explained"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <p>
+        Watch this tutorial to understand the basics of converting between binary, decimal, octal, and hexadecimal systems.
+      </p>
+    </div>
+
+    <div class="section quiz">
+      <h2>🧠 Mini Quiz</h2>
+      <p><strong>Question:</strong> Which of the following is the binary equivalent of the decimal number 10?</p>
+
+      <form id="quizForm">
+        <label><input type="radio" name="answer" value="A"> A) 1000</label><br>
+        <label><input type="radio" name="answer" value="B"> B) 1010</label><br>
+        <label><input type="radio" name="answer" value="C"> C) 1100</label><br>
+        <label><input type="radio" name="answer" value="D"> D) 1001</label><br><br>
+
+        <button type="button" onclick="checkQuizAnswer()">Submit</button>
+        <p id="quizFeedback" style="font-weight: bold; margin-top: 10px;"></p>
+      </form>
+    </div>
+
+    <div class="section">
+      <h2>💡 Advanced Concepts</h2>
+      <p>If you're already comfortable with number system conversions, here are a few advanced topics worth exploring:</p>
+      <ul>
+        <li><strong>Two's Complement:</strong> A method used to represent negative numbers in binary. It's essential for performing binary subtraction and is used in most modern computer systems.</li>
+        <li><strong>Floating-Point Representation:</strong> A system used to represent real numbers (like 3.14 or -0.001) using binary. It follows the IEEE 754 standard and allows computers to handle decimal values with precision.</li>
+      </ul>
+      <p>These concepts are crucial for understanding how computers handle complex mathematical operations and memory storage.</p>
+    </div>
+
+    <a class="back-btn" href="index.html">← Back to Homepage</a>
+  </div>
+
+  <script>
+    function checkQuizAnswer() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      const feedback = document.getElementById("quizFeedback");
+
+      if (!selected) {
+        feedback.textContent = "⚠️ Please select an answer!";
+        feedback.style.color = "orange";
+        return;
+      }
+
+      if (selected.value === "B") {
+        feedback.textContent = "✅ Correct! 1010 is the binary for 10.";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = "❌ Incorrect. Try again!";
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
