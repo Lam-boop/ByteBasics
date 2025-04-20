@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logic Circuits</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F2DDFA;
+      color: #333;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2, h3 {
+      color: #2e3a59;
+    }
+
+    .framed {
+      background-color: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      border: none;
+    }
+
+    .button-container {
+      margin-top: 40px;
+    }
+
+    .button-container a {
+      text-decoration: none;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #888;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Logic Circuits</h1>
+
+  <div class="section">
+    <h2>🔌 What Are Logic Circuits?</h2>
+    <p class="framed">Logic circuits are the foundation of digital electronics. They are built from logic gates that process binary input values (0 and 1) to produce specific outputs. These circuits control everything from simple switches to powerful computers.</p>
+  </div>
+
+  <div class="section">
+    <h2>📺 Video Tutorial</h2>
+    <iframe 
+      src="https://www.youtube.com/embed/INEtYZqtjTo?start=1" 
+      title="Logic Circuits Explained" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+    <p class="framed">Watch this video to learn how basic logic gates like AND, OR, and NOT are used to build more complex circuits.</p>
+  </div>
+
+  <div class="section">
+    <h2>🧠 Common Logic Gates</h2>
+    <h3>AND Gate</h3>
+    <p class="framed">The AND gate outputs 1 only if both inputs are 1.</p>
+
+    <h3>OR Gate</h3>
+    <p class="framed">The OR gate outputs 1 if at least one input is 1.</p>
+
+    <h3>NOT Gate</h3>
+    <p class="framed">The NOT gate inverts the input. If input is 1, output is 0 (and vice versa).</p>
+  </div>
+
+  <div class="section">
+    <h2>📊 Truth Table</h2>
+    <table>
+      <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>AND</th>
+        <th>OR</th>
+        <th>NOT A</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>💡 Fun Fact</h2>
+    <p class="framed">Modern computers use millions of logic gates. Even your phone's calculator uses logic circuits to solve math problems instantly!</p>
+  </div>
+
+  <div class="section">
+    <h2>🧩 Logic Challenge</h2>
+    <p class="framed">Can you figure out the output of this logic circuit?</p>
+    <img src="https://th.bing.com/th/id/OIP.dLlJG309MasPbgHGxHugnwAAAA?rs=1&pid=ImgDetMain" alt="Logic Circuit Diagram">
+
+    <p class="framed">This circuit uses an AND gate followed by a NOT gate (a NAND configuration). If the inputs are A = 1 and B = 1, what is the final output?</p>
+
+    <form class="framed" onsubmit="checkAnswer(event)">
+      <label><input type="radio" name="logicAnswer" value="0"> 0</label><br>
+      <label><input type="radio" name="logicAnswer" value="1"> 1</label><br><br>
+      <button type="submit">Submit Answer</button>
+    </form>
+
+    <p id="feedback" style="font-weight: bold; margin-top: 10px;"></p>
+  </div>
+
+  <div class="button-container">
+    <a href="index.html">
+      <button>← Back to Homepage</button>
+    </a>
+  </div>
+
+  <script>
+    function checkAnswer(event) {
+      event.preventDefault();
+      const selected = document.querySelector('input[name="logicAnswer"]:checked');
+      const feedback = document.getElementById('feedback');
+      if (!selected) {
+        feedback.textContent = "Please choose an answer.";
+        feedback.style.color = "#e67e22";
+        return;
+      }
+
+      const correct = "0"; // 1 AND 1 = 1 → NOT 1 = 0
+
+      if (selected.value === correct) {
+        feedback.textContent = "✅ Correct! 1 AND 1 is 1, and NOT 1 gives 0.";
+        feedback.style.color = "#27ae60";
+      } else {
+        feedback.textContent = "❌ Not quite. 1 AND 1 is 1, and NOT of 1 is 0.";
+        feedback.style.color = "#c0392b";
+      }
+    }
+  </script>
+
+</body>
+</html>
